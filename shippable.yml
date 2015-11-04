@@ -11,8 +11,12 @@ jdk:
 env:
   global:
     - DOCKER_COMPOSE_VERSION=1.5.0rc3
-  
+  matrix:
+    - secure: UqzKoZW4+i8+YqdUrLsg9KKuRmd9ks/i19Ypw2ZTC/5HIkEyi3SPy/8v+nTHUjA4ZgO4Saa5fSgVo2tTHJpLem9OXl2FY+VCxXvy0ax1lxTx/sSy7bWPqbkkn8cpqGDHrD6+GcdEsRWSD0RzapJhBi/LRG/JjK6zihSz0D7XTuqUb3MrjUHlB90SeFrfw1KZDgd+kGzpoq5LOaeGURXLYK70rxTbsJFZqmmL6f6+VFBg6twmWMZ6DQELncH8Ghgo3fkhFGTpw0+9FBhvUIWNMENBNcftzcDC3YR2jwZJgNOxDz/6FfJfqUmhtT83bSd8E2kgFeZjWZ3w/69ZFANMNQ==
 matrix:
   exclude:
     - jdk: openjdk7
       env: DOCKER_COMPOSE_VERSION=1.5.0rc3
+
+before_script:
+   - echo $key1
