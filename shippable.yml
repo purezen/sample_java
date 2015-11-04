@@ -1,12 +1,18 @@
 language: java
 
+script: 
+  - cd sdk ; mvn test
+  - echo $test
+  
 jdk:
-   - openjdk7
-   - oraclejdk7
-   - openjdk6
-   - oraclejdk8
+  - oraclejdk7
+  - openjdk7
 
-after_success:
-   - mvn clean cobertura:cobertura
-   - mvn test
-
+env:
+  global:
+    - DOCKER_COMPOSE_VERSION=1.5.0rc3
+  
+matrix:
+  exclude:
+    - jdk: openjdk7
+      env: DOCKER_COMPOSE_VERSION=1.5.0rc3
